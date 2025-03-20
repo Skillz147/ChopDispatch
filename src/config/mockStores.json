@@ -1,0 +1,450 @@
+{
+  "stores": [
+      {
+          "id": "1",
+          "name": "Iya Eba Buka",
+          "category": "Restaurants",
+          "address": "12 Akindeko Street, Alekuwodo, Osogbo, Osun State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.8,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p1",
+                  "name": "Amala with Custom Soup & Meat",
+                  "image": "https://ipfs.phonetor.com/ipfs/Qmc8HRWbhJJ7XungGgF3qTj6NPaXHP8VKxpqGNzMe9zK9r",
+                  "description": "Choose your preferred soup, protein, sides, and drinks to build your perfect meal.",
+                  "available": true,
+                  "discount": 10,
+                  "main": [
+                    { "name": "Amala", "price": 500 }
+
+                ],
+                  "soups": [
+                      { "name": "Ewedu", "price": 500 },
+                      { "name": "Gbegiri", "price": 600 },
+                      { "name": "Efo Riro", "price": 700 },
+                      { "name": "Ogbono", "price": 800 }
+                  ],
+                  "protein": [
+                      { "name": "Shaki", "price": 800 },
+                      { "name": "Ponmo", "price": 500 },
+                      { "name": "Goat Meat", "price": 1200 },
+                      { "name": "Beef", "price": 1000 }
+                  ],
+                  "drinks": [
+                      { "name": "Zobo", "price": 500 },
+                      { "name": "Palm Wine", "price": 700 },
+                      { "name": "Coke", "price": 400 },
+                      { "name": "Water", "price": 200 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "2",
+          "name": "Pizza House",
+          "category": "Restaurants",
+          "address": "45 Adeniran Ogunsanya Street, Surulere, Lagos, Lagos State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.5,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p2",
+                  "name": "Build Your Own Pizza",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Customize your pizza with different toppings and extra cheese.",
+                  "available": true,
+                  "discount": 10,
+                  "base_options": [
+                      { "name": "Small Crust", "price": 1500 },
+                      { "name": "Medium Crust", "price": 2000 },
+                      { "name": "Large Crust", "price": 2500 }
+                  ],
+                  "toppings": [
+                      { "name": "Pepperoni", "price": 600 },
+                      { "name": "Extra Cheese", "price": 500 },
+                      { "name": "Mushrooms", "price": 400 },
+                      { "name": "Olives", "price": 400 }
+                  ],
+                  "drinks": [
+                      { "name": "Fanta", "price": 500 },
+                      { "name": "Sprite", "price": 500 },
+                      { "name": "Water", "price": 200 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "3",
+          "name": "Baba Skye Bukateria",
+          "category": "Restaurants",
+          "address": "8 Oba Adesoji Street, GRA, Ilorin, Kwara State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.6,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p3",
+                  "name": "Ewa Agoyin with Custom Toppings",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Pick your preferred sides and drinks.",
+                  "available": true,
+                  "discount": 0,
+                  "sides": [
+                      { "name": "Ponmo", "price": 500 },
+                      { "name": "Fried Fish", "price": 1000 },
+                      { "name": "Agege Bread", "price": 300 }
+                  ],
+                  "drinks": [
+                      { "name": "Malt", "price": 700 },
+                      { "name": "Water", "price": 200 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "4",
+          "name": "Mama Ayo’s Kitchen",
+          "category": "Restaurants",
+          "address": "22 Iwo Road, Idi-Ape, Ibadan, Oyo State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.7,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p4",
+                  "name": "Boli with Groundnut & Custom Sides",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Pick extra toppings or sides to go with your roasted plantain.",
+                  "available": true,
+                  "discount": 0,
+                  "sides": [
+                      { "name": "Groundnut", "price": 200 },
+                      { "name": "Pepper Sauce", "price": 300 }
+                  ],
+                  "drinks": [
+                      { "name": "Zobo", "price": 500 },
+                      { "name": "Pepsi", "price": 400 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "5",
+          "name": "Oga Chop Bar",
+          "category": "Restaurants",
+          "address": "17 Zik Avenue, Uwani, Enugu, Enugu State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.5,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p5",
+                  "name": "Ogbono Soup with Custom Meat & Sides",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Pick your meat and extra sides to complete your soup.",
+                  "available": true,
+                  "discount": 10,
+                  "soups": [
+                      { "name": "Ogbono", "price": 800 },
+                      { "name": "Efo Riro", "price": 700 }
+                  ],
+                  "protein": [
+                      { "name": "Goat Meat", "price": 1200 },
+                      { "name": "Beef", "price": 1000 },
+                      { "name": "Stock Fish", "price": 1500 }
+                  ],
+                  "sides": [
+                      { "name": "Moin Moin", "price": 500 }
+                  ],
+                  "drinks": [
+                      { "name": "Palm Wine", "price": 700 },
+                      { "name": "Coke", "price": 400 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "6",
+          "name": "FreshMart Groceries",
+          "category": "Groceries",
+          "address": "3 Allen Avenue, Ikeja, Lagos, Lagos State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.7,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p6",
+                  "name": "Build Your Own Meal Box",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Create a custom meal with your choice of proteins, grains, and drinks.",
+                  "available": true,
+                  "discount": 0,
+                  "protein": [
+                      { "name": "Chicken Breast", "price": 1200 },
+                      { "name": "Beef Steak", "price": 1500 },
+                      { "name": "Pork Ribs", "price": 1300 }
+                  ],
+                  "sides": [
+                      { "name": "Rice", "price": 300 },
+                      { "name": "Yam", "price": 400 },
+                      { "name": "Potatoes", "price": 350 }
+                  ],
+                  "drinks": [
+                      { "name": "Orange Juice", "price": 500 },
+                      { "name": "Soda", "price": 400 },
+                      { "name": "Water", "price": 200 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "7",
+          "name": "HealthPlus Pharmacy",
+          "category": "Pharmacy",
+          "address": "19 Gani Fawehinmi Street, Garki, Abuja, FCT",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.5,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p7",
+                  "name": "Custom Wellness Kit",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Build your own health kit with medications and supplements.",
+                  "available": true,
+                  "discount": 5,
+                  "medications": [
+                      { "name": "Paracetamol", "price": 300 },
+                      { "name": "Ibuprofen", "price": 400 },
+                      { "name": "Cough Syrup", "price": 600 }
+                  ],
+                  "supplements": [
+                      { "name": "Vitamin C", "price": 500 },
+                      { "name": "Multivitamin", "price": 700 },
+                      { "name": "Omega-3", "price": 800 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "8",
+          "name": "Ojuelegba Local Market",
+          "category": "Local Market",
+          "address": "25 Ojuelegba Road, Yaba, Lagos, Lagos State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.6,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-22:00"
+          },
+          "products": [
+              {
+                  "id": "p8",
+                  "name": "Custom Soup Bowl",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Pick your soup base, proteins, and extras from the local market.",
+                  "available": true,
+                  "discount": 0,
+                  "soups": [
+                      { "name": "Egusi", "price": 600 },
+                      { "name": "Vegetable Soup", "price": 500 },
+                      { "name": "Okra Soup", "price": 550 }
+                  ],
+                  "protein": [
+                      { "name": "Fish", "price": 1000 },
+                      { "name": "Chicken", "price": 800 },
+                      { "name": "Goat Meat", "price": 1200 }
+                  ],
+                  "sides": [
+                      { "name": "Pounded Yam", "price": 400 },
+                      { "name": "Garri", "price": 300 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "9",
+          "name": "Lekki City Mall",
+          "category": "Mall",
+          "address": "10 Admiralty Way, Lekki Phase 1, Lagos, Lagos State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.8,
+          "hours": {
+  "Monday": "08:00-18:00",
+  "Tuesday": "08:00-18:00",
+  "Wednesday": "08:00-18:00",
+  "Thursday": "08:00-18:00",
+  "Friday": "08:00-18:00",
+  "Saturday": "08:00-18:00",
+  "Sunday": "08:00-18:00"
+},
+          "products": [
+              {
+                  "id": "p9",
+                  "name": "Custom Snack Pack",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Build your snack pack with treats and beverages from the mall.",
+                  "available": true,
+                  "discount": 10,
+                  "snacks": [
+                      { "name": "Popcorn", "price": 400 },
+                      { "name": "Chin Chin", "price": 300 },
+                      { "name": "Plantain Chips", "price": 350 }
+                  ],
+                  "drinks": [
+                      { "name": "Cola", "price": 400 },
+                      { "name": "Fanta", "price": 400 },
+                      { "name": "Malt", "price": 500 }
+                  ],
+                  "extras": [
+                      { "name": "Chocolate Bar", "price": 600 },
+                      { "name": "Cookies", "price": 500 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "10",
+          "name": "Suya Spot",
+          "category": "Restaurants",
+          "address": "7 Ahmadu Bello Way, Area 11, Abuja, FCT",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.9,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p10",
+                  "name": "Custom Suya Platter",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Choose your meat, spices, and sides for a perfect suya experience.",
+                  "available": true,
+                  "discount": 5,
+                  "protein": [
+                      { "name": "Beef Suya", "price": 1000 },
+                      { "name": "Chicken Suya", "price": 900 },
+                      { "name": "Ram Suya", "price": 1200 }
+                  ],
+                  "spices": [
+                      { "name": "Mild", "price": 0 },
+                      { "name": "Spicy", "price": 100 }
+                  ],
+                  "sides": [
+                      { "name": "Onions", "price": 200 },
+                      { "name": "Tomatoes", "price": 200 }
+                  ],
+                  "drinks": [
+                      { "name": "Kunu", "price": 400 },
+                      { "name": "Fanta", "price": 400 }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": "11",
+          "name": "Eko Fashion Hub",
+          "category": "Fashion",
+          "address": "15 Balogun Street, Idumota, Lagos, Lagos State",
+          "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+          "rating": 4.4,
+          "hours": {
+            "Monday": "08:00-18:00",
+            "Tuesday": "08:00-18:00",
+            "Wednesday": "08:00-18:00",
+            "Thursday": "08:00-18:00",
+            "Friday": "08:00-18:00",
+            "Saturday": "08:00-18:00",
+            "Sunday": "08:00-18:00"
+          },
+          "products": [
+              {
+                  "id": "p11",
+                  "name": "Custom Ankara Outfit",
+                  "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+                  "description": "Design your own traditional outfit with fabric and accessories.",
+                  "available": true,
+                  "discount": 15,
+                  "fabric": [
+                      { "name": "Ankara Print", "price": 2000 },
+                      { "name": "Aso-Oke", "price": 2500 }
+                  ],
+                  "accessories": [
+                      { "name": "Beads", "price": 500 },
+                      { "name": "Cap", "price": 700 }
+                  ]
+              }
+          ]
+      }
+  ]
+}

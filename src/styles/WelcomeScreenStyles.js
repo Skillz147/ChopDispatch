@@ -1,0 +1,203 @@
+import { StyleSheet, Platform } from "react-native";
+import colors from "./colors";
+
+export default StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background, // #F5F5F5
+    },
+    siteHeader: {
+        backgroundColor: colors.flagship, // Deep teal base: #004D40
+        paddingVertical: 20,
+        paddingHorizontal: 20,
+        paddingTop: Platform.OS === "ios" ? 50 : 30, // Extra padding for iOS (Dynamic Island)
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        overflow: "hidden",
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 6,
+        elevation: 8,
+    },
+    logo: {
+        width: 200, // Adjust width based on your logo size
+        height: 100, // Adjust height based on your logo size
+        resizeMode: "contain", // Ensures the logo scales proportionally
+    },
+    headerGradientOverlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: "transparent",
+        opacity: 0.8,
+        backgroundImage: `linear-gradient(to right, ${colors.flagship}, ${colors.primary})`,
+    },
+    siteHeaderText: {
+        fontSize: 34, // Kept for reference, but replaced by logo
+        fontWeight: "800",
+        color: colors.surface, // White
+        textTransform: "uppercase",
+        letterSpacing: 3,
+        zIndex: 1,
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+        textShadowColor: "rgba(0, 0, 0, 0.4)",
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 5,
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    authScrollContainer: {
+        flexGrow: 1,
+        paddingBottom: 20,
+    },
+    header: {
+        backgroundColor: colors.flagship,
+        padding: 20,
+        paddingTop: 70,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        shadowColor: "#333",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 6,
+        elevation: 8,
+    },
+    welcomeText: {
+        fontSize: 28,
+        fontWeight: "700",
+        color: colors.surface,
+        marginBottom: 10,
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+        textShadowColor: "rgba(0, 0, 0, 0.2)",
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 2,
+    },
+    highlight: {
+        color: colors.primary, // Vibrant green: #00A36C
+    },
+    weatherContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    weatherText: {
+        fontSize: 16,
+        color: colors.surface,
+        marginLeft: 10,
+        fontWeight: "500",
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+    },
+    contentContainer: {
+        padding: 20,
+    },
+    card: {
+        backgroundColor: colors.background,
+        padding: 20,
+        borderRadius: 15,
+        marginBottom: 50,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.15,
+        shadowRadius: 5,
+        elevation: 4,
+        borderWidth: 1,
+        borderColor: colors.textLight + "20",
+    },
+    cardTitle: {
+        fontSize: 18,
+        fontWeight: "600",
+        color: colors.flagship,
+        marginBottom: 8,
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+    },
+    cardText: {
+        fontSize: 14,
+        color: colors.textDark,
+        lineHeight: 22,
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+    },
+    subText: {
+        fontSize: 16,
+        color: colors.textLight,
+        textAlign: "center",
+        marginBottom: 20,
+        fontWeight: "500",
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+    },
+    optionsContainer: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        marginBottom: 30,
+    },
+    optionButton: {
+        backgroundColor: colors.background,
+        padding: 25,
+        borderRadius: 15,
+        alignItems: "center",
+        width: "100%",
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.2,
+        shadowRadius: 6,
+        elevation: 5,
+        borderWidth: 1,
+        borderColor: colors.primary + "20",
+        marginTop: 20,
+    },
+    optionText: {
+        fontSize: 16,
+        fontWeight: "600",
+        color: colors.textDark,
+        marginTop: 10,
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+    },
+    tipCard: {
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: colors.flagship + "10",
+        padding: 15,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: colors.flagship + "30",
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+        elevation: 2,
+        marginTop: 250,
+    },
+    tipText: {
+        fontSize: 14,
+        color: colors.flagship,
+        marginLeft: 10,
+        flex: 1,
+        lineHeight: 22,
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+    },
+    unauthContainer: {
+        flex: 1,
+        alignItems: "center",
+        backgroundColor: colors.background,
+        paddingTop: 30,
+        paddingHorizontal: 20,
+    },
+    lottie: {
+        width: "100%",
+        height: 250,
+        alignSelf: "center",
+    },
+    lottieText: {
+        fontSize: 26,
+        fontWeight: "700",
+        color: colors.textDark,
+        textAlign: "center",
+        marginTop: 10,
+        marginBottom: 20,
+        textShadowColor: "rgba(0, 0, 0, 0.3)",
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 3,
+        fontFamily: Platform.OS === "ios" ? "System" : "Roboto",
+    },
+});

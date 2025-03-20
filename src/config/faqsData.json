@@ -1,0 +1,53 @@
+[
+    {
+      "category": "Account Management",
+      "items": [
+        {
+          "question": "How do I reset my password?",
+          "answer": "Navigate to the Security section in your account settings, select 'Change Password', and follow the instructions to reset your password. You’ll need to verify your email address."
+        },
+        {
+          "question": "Can I change my display name?",
+          "answer": "Yes, go to 'My Profile' in your account settings. Edit the display name field and save your changes. Note that this updates how your name appears across the app."
+        },
+        {
+          "question": "What happens if I log out?",
+          "answer": "Logging out will end your current session. You’ll need to log back in with your credentials to access your account again. Your data remains safe and linked to your account."
+        }
+      ]
+    },
+    {
+      "category": "Vendor Application",
+      "items": [
+        {
+          "question": "How can I become a vendor?",
+          "answer": "If you have a standard account, go to your Account screen and select 'Upgrade to Vendor'. Fill out the application form with your personal and business details, then submit it for review."
+        },
+        {
+          "question": "How long does vendor approval take?",
+          "answer": "The review process typically takes 3-5 business days. You’ll receive an email notification once your application is approved or if additional information is needed."
+        },
+        {
+          "question": "What documents are required to become a vendor?",
+          "answer": "No documents are required initially. However, we may request business verification (e.g., tax ID, business license) during the review process for certain categories."
+        }
+      ]
+    },
+    {
+      "category": "Shipping & Orders",
+      "items": [
+        {
+          "question": "What are the shipping options available?",
+          "answer": "We offer two options: Rider PickUp, where a rider collects your order, and Delivery, where your order is shipped to your address. Switch between them on the home screen."
+        },
+        {
+          "question": "How can I track my order?",
+          "answer": "Go to the 'Orders' section in your account or the 'Track' tab if using Rider PickUp. Enter your order ID or use the provided tracking link to see real-time updates."
+        },
+        {
+          "question": "What if my order is delayed?",
+          "answer": "Contact support with your order ID. Delays can occur due to weather, rider availability, or processing times. We’ll investigate and provide an update within 24 hours."
+        }
+      ]
+    }
+  ]

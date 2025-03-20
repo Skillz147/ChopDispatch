@@ -1,28 +1,66 @@
 {
   "expo": {
-    "name": "Mowiz",
+    "name": "Delivero",
     "slug": "Mowiz",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/delivero-512.png",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/delivero-1024.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#333"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.Delivero.app",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/delivero-1024.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.Delivero.app",
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/delivero-512.png"
+    },
+    "scheme": "delivero",
+    "extra": {
+      "expoClientId": "@env:EXPO_GOOGLE_CLIENT_ID",
+      "iosClientId": "@env:IOS_GOOGLE_CLIENT_ID",
+      "androidClientId": "@env:ANDROID_GOOGLE_CLIENT_ID",
+      "eas": {
+        "projectId": "ac41c63b-8362-42fa-bd76-e0854a555f15"
+      }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Poppins-Regular.ttf",
+            "./assets/fonts/Poppins-Bold.ttf"
+          ]
+        }
+      ]
+    ],
+    "owner": "webdev147",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "enabled": true,
+      "url": "https://u.expo.dev/ac41c63b-8362-42fa-bd76-e0854a555f15"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }

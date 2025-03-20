@@ -1,0 +1,54 @@
+[
+    {
+        "id": "1",
+        "title": "Introducing Our New Vendor Program!",
+        "author": "Mowiz Team",
+        "date": "2025-03-15T10:00:00Z",
+        "modifiedBy": null,
+        "modifiedDate": null,
+        "likes": 42,
+        "views": 150,
+        "content": "We’re thrilled to announce our new vendor program, designed to help local businesses join our platform with ease. This program offers a streamlined onboarding process, dedicated support, and marketing tools to help vendors reach more customers. Sign up for our upcoming webinar to learn how to get started!",
+        "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+        "externalLink": "https://mowiz.com/webinar/vendor-program-signup"
+    },
+    {
+        "id": "2",
+        "title": "App Update: Version 2.1.0",
+        "author": "Mowiz Dev",
+        "date": "2025-03-10T14:30:00Z",
+        "modifiedBy": null,
+        "modifiedDate": null,
+        "likes": 18,
+        "views": 90,
+        "content": "We’ve just released version 2.1.0 of the Mowiz app! This update brings improved tracking features, a faster checkout process, and several bug fixes reported by our community. We’ve also enhanced the UI for a smoother experience. Check out the full changelog for more details and let us know your feedback!",
+        "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+        "externalLink": "https://mowiz.com/changelog/version-2-1-0"
+    },
+    {
+        "id": "3",
+        "title": "Community Spotlight: Vendor of the Month",
+        "author": "Mowiz Community",
+        "date": "2025-03-05T08:00:00Z",
+        "modifiedBy": null,
+        "modifiedDate": null,
+        "likes": 65,
+        "views": 200,
+        "content": "This month, we’re highlighting Jane’s Bakery as our Vendor of the Month! Known for their amazing service and delicious treats, Jane’s Bakery has been a favorite in the Mowiz community. From their signature cupcakes to freshly baked bread, there’s something for everyone. Visit their profile on our website to learn more and place an order today!",
+        "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+        "externalLink": "https://mowiz.com/vendors/janes-bakery"
+    },
+    {
+        "id": "4",
+        "title": "Upcoming Feature: Real-Time Chat",
+        "author": "Mowiz Product Team",
+        "date": "2025-03-01T12:00:00Z",
+        "modifiedBy": null,
+        "modifiedDate": null,
+        "likes": 30,
+        "views": 120,
+        "content": "We’re excited to share that we’re working on a real-time chat feature to connect customers with vendors directly within the app! This will make communication faster and more convenient, whether you’re confirming an order or asking about a product. We’re aiming to launch this feature in April 2025. Share your thoughts and suggestions via our feedback form!",
+        "image": "https://ipfs.phonetor.com/ipfs/QmajGVR3amqnNyxWRnJys1v1oJNYU1gTxcA9umADTVFD4r",
+        "externalLink": "https://mowiz.com/feedback/real-time-chat"
+    }
+]

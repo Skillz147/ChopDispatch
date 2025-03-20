@@ -1,0 +1,42 @@
+{
+    "firstMessage": {
+      "greeting": "Hi %name%, how are you today? How can I help you?",
+      "options": [
+        {
+          "text": "Order Help",
+          "icon": "package-variant",
+          "keywords": ["order", "delivery", "track", "package"],
+          "response": "I can assist with your order! What do you need help with?",
+          "subOptions": [
+            { "text": "Track Order", "response": "Please provide your order number to track it." },
+            { "text": "Cancel Order", "response": "I can help cancel your order. What’s the order ID?" },
+            { "text": "Order Status", "response": "Let me check your order status. What’s the order number?" }
+          ]
+        },
+        {
+          "text": "Account Issues",
+          "icon": "account-settings",
+          "keywords": ["account", "login", "password", "profile"],
+          "response": "Let’s sort out your account. What’s the issue?",
+          "subOptions": [
+            { "text": "Reset Password", "response": "I’ll guide you to reset your password. Check your email." },
+            { "text": "Update Profile", "response": "You can update your profile in Settings. Need help?" },
+            { "text": "Login Trouble", "response": "Can’t log in? Let’s troubleshoot—any error messages?" }
+          ]
+        },
+        {
+          "text": "General Inquiry",
+          "icon": "help-circle",
+          "keywords": ["question", "info", "help", "how"],
+          "response": "I’m here for any questions! What’s on your mind?",
+          "subOptions": [
+            { "text": "App Features", "response": "Want to know about app features? Ask away!" },
+            { "text": "Contact Support", "response": "I can connect you to support. What’s your issue?" },
+            { "text": "Feedback", "response": "Love feedback! What do you think of the app?" }
+          ]
+        }
+      ]
+    },
+    "defaultResponse": "I’m not sure I understood that. Could you clarify, or type 'Options' to see the list again?",
+    "optionsPrompt": "You can see the options again by typing 'Options'."
+  }

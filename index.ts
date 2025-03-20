@@ -1,8 +1,18 @@
 import { registerRootComponent } from 'expo';
-
 import App from './App';
+import { LogBox } from "react-native";
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
+// ✅ Ignore ALL logs from UI but keep them in the console
+LogBox.ignoreAllLogs(); // Hides warnings in the UI
+
+// ✅ Auto-detect & suppress ANY warning dynamically (while still logging them)
+const originalWarn = console.warn;
+console.warn = (...args) => {
+  if (__DEV__) {
+    // ✅ Log all warnings in development mode
+    originalWarn(...args);
+  }
+};
+
+
 registerRootComponent(App);

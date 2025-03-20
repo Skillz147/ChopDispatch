@@ -1,0 +1,188 @@
+{
+    "personality": {
+      "tone": "warm",
+      "greetingStyle": "personal",
+      "responseDelay": 1200,
+      "fallbackDelay": 800
+    },
+    "initialGreeting": {
+      "text": "Hi %name%, it’s great to see you! How’s your day going? I’m here to help—what’s on your mind?",
+      "options": "mainOptions"
+    },
+    "options": {
+      "mainOptions": [
+        {
+          "text": "Order Assistance",
+          "icon": "package-variant",
+          "keywords": ["order", "delivery", "track", "package", "shipping", "item", "purchase"],
+          "response": "Let’s get your order sorted out! What do you need help with today?",
+          "subOptions": "orderSubOptions"
+        },
+        {
+          "text": "Account Support",
+          "icon": "account-settings",
+          "keywords": ["account", "login", "password", "profile", "signup", "email", "settings"],
+          "response": "I’ve got you covered on account stuff. What’s giving you trouble?",
+          "subOptions": "accountSubOptions"
+        },
+        {
+          "text": "App Questions",
+          "icon": "help-circle",
+          "keywords": ["app", "feature", "how", "use", "navigate", "question", "info"],
+          "response": "Curious about the app? I’d love to show you around—what’s your question?",
+          "subOptions": "appSubOptions"
+        },
+        {
+          "text": "Payment Issues",
+          "icon": "credit-card",
+          "keywords": ["payment", "card", "billing", "charge", "refund", "money", "transaction"],
+          "response": "Payments can be tricky—let’s fix that. What’s the issue with your payment?",
+          "subOptions": "paymentSubOptions"
+        },
+        {
+          "text": "Feedback & Suggestions",
+          "icon": "comment-text",
+          "keywords": ["feedback", "suggest", "idea", "review", "opinion", "tell"],
+          "response": "I’d love to hear what you think! What’s your feedback or suggestion?",
+          "subOptions": "feedbackSubOptions"
+        }
+      ],
+      "orderSubOptions": [
+        {
+          "text": "Track My Order",
+          "keywords": ["track", "where", "location", "status", "find"],
+          "response": "Let’s find your order! Could you share your order number?"
+        },
+        {
+          "text": "Cancel an Order",
+          "keywords": ["cancel", "stop", "remove", "delete"],
+          "response": "Need to cancel? No problem—just give me the order ID, and I’ll help you out."
+        },
+        {
+          "text": "Check Order Status",
+          "keywords": ["status", "update", "progress", "when"],
+          "response": "I’ll check on that for you! What’s your order number?"
+        },
+        {
+          "text": "Change Delivery Address",
+          "keywords": ["address", "change", "move", "ship"],
+          "response": "Want to update your delivery spot? Tell me the order ID and the new address."
+        },
+        {
+          "text": "Report Missing Item",
+          "keywords": ["missing", "lost", "not delivered", "item"],
+          "response": "Oh no, something’s missing? Let’s fix it—what’s the order ID?"
+        }
+      ],
+      "accountSubOptions": [
+        {
+          "text": "Reset Password",
+          "keywords": ["password", "reset", "forgot", "change"],
+          "response": "Let’s get your password reset. Check your email for a link—did it arrive?"
+        },
+        {
+          "text": "Update Profile Info",
+          "keywords": ["profile", "name", "email", "update", "edit"],
+          "response": "You can tweak your profile in Settings, but I’m here if you need help—what do you want to change?"
+        },
+        {
+          "text": "Login Problems",
+          "keywords": ["login", "sign in", "access", "trouble"],
+          "response": "Can’t get in? Let’s figure it out—what error do you see?"
+        },
+        {
+          "text": "Delete Account",
+          "keywords": ["delete", "remove", "close", "account"],
+          "response": "Thinking of leaving? I’d hate to see you go—can you tell me why, and I’ll guide you through it?"
+        },
+        {
+          "text": "Verify Email",
+          "keywords": ["verify", "email", "confirmation", "code"],
+          "response": "Need to verify your email? Check your inbox for a code—got it handy?"
+        }
+      ],
+      "appSubOptions": [
+        {
+          "text": "Learn App Features",
+          "keywords": ["feature", "what", "how", "use"],
+          "response": "The app’s full of cool stuff! What feature are you curious about?"
+        },
+        {
+          "text": "Fix App Crash",
+          "keywords": ["crash", "bug", "error", "freeze"],
+          "response": "Sorry about that crash! What were you doing when it happened?"
+        },
+        {
+          "text": "Update App",
+          "keywords": ["update", "version", "new", "install"],
+          "response": "Keeping the app fresh is easy—head to the app store. Need a hand finding it?"
+        },
+        {
+          "text": "How to Contact Support",
+          "keywords": ["support", "help", "contact", "team"],
+          "response": "You’re already chatting with me, but for human support, what’s your issue?"
+        },
+        {
+          "text": "App Navigation Help",
+          "keywords": ["navigate", "find", "where", "menu"],
+          "response": "Lost in the app? Tell me what you’re looking for, and I’ll point the way!"
+        }
+      ],
+      "paymentSubOptions": [
+        {
+          "text": "Add Payment Method",
+          "keywords": ["add", "card", "payment", "method"],
+          "response": "Adding a payment method is simple—go to Settings > Payments. Need help with that?"
+        },
+        {
+          "text": "Remove Card",
+          "keywords": ["remove", "delete", "card", "payment"],
+          "response": "Want to take a card off? I can walk you through it—what’s the card ending in?"
+        },
+        {
+          "text": "Refund Request",
+          "keywords": ["refund", "money", "back", "return"],
+          "response": "Let’s get your refund sorted. What’s the order ID for the payment?"
+        },
+        {
+          "text": "Payment Failed",
+          "keywords": ["failed", "declined", "error", "pay"],
+          "response": "Payment didn’t go through? What error did you get—let’s fix it!"
+        },
+        {
+          "text": "Check Billing History",
+          "keywords": ["billing", "history", "charge", "receipt"],
+          "response": "Your billing history’s in Settings > Payments. Want me to help find a specific charge?"
+        }
+      ],
+      "feedbackSubOptions": [
+        {
+          "text": "Love the App",
+          "keywords": ["love", "great", "awesome", "good"],
+          "response": "Aw, thanks! What do you love most? I’ll pass it along!"
+        },
+        {
+          "text": "Something’s Wrong",
+          "keywords": ["wrong", "bad", "issue", "problem"],
+          "response": "I’m sorry something’s off—what’s going wrong? Let’s make it right."
+        },
+        {
+          "text": "Suggest a Feature",
+          "keywords": ["suggest", "idea", "add", "new"],
+          "response": "Got a brilliant idea? Lay it on me—I’m all ears!"
+        },
+        {
+          "text": "Rate the Service",
+          "keywords": ["rate", "review", "opinion", "think"],
+          "response": "How would you rate us? Your thoughts mean a lot!"
+        },
+        {
+          "text": "Report a Bug",
+          "keywords": ["bug", "glitch", "error", "fix"],
+          "response": "Bugs are no fun—tell me what happened, and I’ll get it sorted."
+        }
+      ]
+    },
+    "defaultResponse": "Hmm, I’m not quite sure what you mean. Could you give me a bit more, or type 'Options' to see the list?",
+    "optionsPrompt": "You can always bring back the options by typing 'Options'—just let me know!"
+  }

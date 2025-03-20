@@ -1,0 +1,30 @@
+{
+    "contactMethods": [
+      {
+        "type": "email",
+        "icon": "email",
+        "value": "support@delivero.com",
+        "label": "Email Us",
+        "description": "For general inquiries and support requests. Response time: 24-48 hours."
+      },
+      {
+        "type": "phone",
+        "icon": "phone",
+        "value": "+234 (902)-305-8082",
+        "label": "Call Us",
+        "description": "Available Monday-Friday, 9 AM - 6 PM EST."
+      },
+      {
+        "type": "chat",
+        "icon": "message-text",
+        "value": "Live Chat",
+        "label": "Chat with Us",
+        "description": "Available 24/7. Look for the chat icon in the app during business hours."
+      }
+    ],
+    "additionalInfo": {
+      "supportHours": "24/7 via email and chat, phone support 9 AM - 5 PM EST",
+      "responseTime": "Email: 24-48 hours, Chat: Immediate during business hours",
+      "address": "Deeper Life Junction, Before Circle Lounge, Ibikunle Estate, Osogbo, Osun-State"
+    }
+  }
