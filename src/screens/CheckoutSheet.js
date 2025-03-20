@@ -4,7 +4,7 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView,
+  FlatList, // Changed from ScrollView
   Modal,
   KeyboardAvoidingView,
   Platform,
@@ -117,7 +117,6 @@ const CheckoutSheet = ({ visible, onClose }) => {
   const saveOrderToFirestore = async (paymentData, trackingNum) => {
     try {
       const orderData = {
-        userId: user?.uid || "anonymous",
         cartItems: cartItems.map((item) => ({
           id: item.id,
           name: item.name,
@@ -263,7 +262,7 @@ const CheckoutSheet = ({ visible, onClose }) => {
     return (
       <View style={styles.orderSummary}>
         <Text style={styles.summaryTitle}>Order Summary</Text>
-        <ScrollView style={styles.summaryScroll} showsVerticalScrollIndicator={false}>
+        <View style={styles.summaryScroll}>
           {cartItems.map((item, index) => (
             <View key={item.id || `item-${index}`} style={styles.summaryItem}>
               <Text style={styles.summaryItemName}>{item.name || "Unnamed Item"}</Text>
@@ -281,7 +280,7 @@ const CheckoutSheet = ({ visible, onClose }) => {
               <Text style={styles.summaryItemTotal}>Total: {formatPrice(item.totalPrice || 0)}</Text>
             </View>
           ))}
-        </ScrollView>
+        </View>
       </View>
     );
   }, [cartItems, formatPrice]);
@@ -315,6 +314,17 @@ const CheckoutSheet = ({ visible, onClose }) => {
     }
   };
 
+  // Data for FlatList
+  const listData = useMemo(() => {
+    const data = [];
+    if (renderOrderSummary) data.push({ key: "orderSummary", content: renderOrderSummary });
+    if (renderStep()) data.push({ key: "step", content: renderStep() });
+    return data;
+  }, [renderOrderSummary, step]);
+
+  const renderItem = ({ item }) => {
+    return item.content;
+  };
 
   return (
     <Modal
@@ -359,18 +369,20 @@ const CheckoutSheet = ({ visible, onClose }) => {
               <TouchableOpacity style={styles.closeButton} onPress={handleBack}>
                 <Text style={styles.closeText}>Back</Text>
               </TouchableOpacity>
-              <ScrollView contentContainerStyle={styles.contentContainer}>
-                {renderOrderSummary}
-                {renderStep()}
-              </ScrollView>
+              <FlatList // Replaced ScrollView with FlatList
+                data={listData}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.key}
+                contentContainerStyle={styles.contentContainer}
+                showsVerticalScrollIndicator={false}
+              />
               {step !== "confirmation" && step !== "payment" && (
                 <View style={styles.footer}>
                   <Text style={styles.summaryTotal}>
                     Grand Total: {formatPrice(totalAmount)}
                     {deliveryOption === "rider" && (
                       <Text style={styles.feeBreakdown}>
-                        {" "}
-                        (Cart: {formatPrice(cartSubtotal)} + Rider: {formatPrice(riderFee)}
+                        <Text> </Text>(Cart: {formatPrice(cartSubtotal)} + Rider: {formatPrice(riderFee)}
                         {urgent ? ` + Urgent: ${formatPrice(urgentFee)}` : ""})
                       </Text>
                     )}

@@ -12,7 +12,6 @@ import {
     Keyboard,
     Platform,
 } from "react-native";
-import PhoneInput from "react-native-phone-number-input";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { PhoneAuthProvider, signInWithCredential } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -44,7 +43,6 @@ const PhoneAuthSheet = ({ visible, onClose }) => {
     const [landmark, setLandmark] = useState("");
     const [customName, setCustomName] = useState("");
     const [loadingSubmit, setLoadingSubmit] = useState(false);
-    const phoneInputRef = useRef(null);
     const isExpoGo = Platform.OS === "ios" || Platform.OS === "android";
     const navigation = useNavigation();
     const { setUser } = useContext(AuthContext);
@@ -68,7 +66,9 @@ const PhoneAuthSheet = ({ visible, onClose }) => {
     const sendOTP = async () => {
         setLoadingSend(true);
         try {
-            const confirmation = await signInWithPhone(formattedValue);
+            // Ensure the phone number starts with a "+" and country code
+            const formattedPhone = formattedValue.startsWith("+") ? formattedValue : `+234${formattedValue}`;
+            const confirmation = await signInWithPhone(formattedPhone);
             if (confirmation.verificationId === "EXPO_GO_FAKE_VERIFICATION") {
                 setIsDemo(true);
                 setVerificationId(confirmation.verificationId);
@@ -99,8 +99,7 @@ const PhoneAuthSheet = ({ visible, onClose }) => {
             } else {
                 const credential = PhoneAuthProvider.credential(verificationId, code);
                 userCredential = await signInWithCredential(auth, credential);
-                // Wait for auth state to update
-                await new Promise((resolve) => setTimeout(resolve, 1000)); // Small delay to ensure auth state syncs
+                await new Promise((resolve) => setTimeout(resolve, 1000));
             }
             const { status } = await Location.requestForegroundPermissionsAsync();
             if (status === "granted") {
@@ -150,7 +149,6 @@ const PhoneAuthSheet = ({ visible, onClose }) => {
                 createdAt: new Date().toISOString(),
             };
 
-            // Only proceed if authenticated or in demo mode
             if (isDemo || auth.currentUser) {
                 await setDoc(doc(db, "users", user.uid), userData);
                 await setDoc(doc(db, "addresses", user.uid), addressData);
@@ -188,20 +186,20 @@ const PhoneAuthSheet = ({ visible, onClose }) => {
 
                                 {step === "phone" && (
                                     <>
-                                        <PhoneInput
-                                            ref={phoneInputRef}
-                                            defaultValue={phoneNumber}
-                                            defaultCode="NG"
-                                            layout="first"
-                                            onChangeText={setPhoneNumber}
-                                            onChangeFormattedText={setFormattedValue}
-                                            withShadow
-                                            autoFocus
-                                            containerStyle={styles.phoneInputContainer}
-                                            textContainerStyle={styles.phoneTextContainer}
-                                            textInputStyle={styles.phoneTextInput}
-                                            codeTextStyle={styles.codeText}
-                                        />
+                                        <View style={styles.inputContainer}>
+                                            <Icon name="phone" size={24} color={colors.textDark} style={styles.inputIcon} />
+                                            <TextInput
+                                                placeholder="Enter phone number (e.g., 8031234567)"
+                                                value={phoneNumber}
+                                                onChangeText={(text) => {
+                                                    setPhoneNumber(text);
+                                                    setFormattedValue(text);
+                                                }}
+                                                keyboardType="phone-pad"
+                                                style={styles.input}
+                                                placeholderTextColor={colors.textLight}
+                                            />
+                                        </View>
                                         <MotiView
                                             from={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, Modal, TouchableOpacity, Alert } from "react-native";
 import * as Updates from "expo-updates";
 import LottieView from "lottie-react-native";
-import * as Progress from "react-native-progress"; // Import progress bar
+import * as Progress from "react-native-progress";
 import loadingAnimation from "../../assets/lottie/loading.json";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "../styles/UpdateSheetStyles";
@@ -16,7 +16,7 @@ const UpdateSheet = ({ visible, onClose, forceUpdate = false, isExpoGo }) => {
   const [updateStatus, setUpdateStatus] = useState("checking");
   const [updateMessage, setUpdateMessage] = useState("Checking for updates...");
   const [updateCount, setUpdateCount] = useState(0);
-  const [progress, setProgress] = useState(0); // Progress state for the bar
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const simulateProgress = async (stageDuration, nextStatus, nextMessage) => {
@@ -28,26 +28,23 @@ const UpdateSheet = ({ visible, onClose, forceUpdate = false, isExpoGo }) => {
           clearInterval(interval);
         }
         setProgress(progressValue);
-      }, stageDuration / 10); // Update progress every 10% of the stage duration
+      }, stageDuration / 10);
 
       await new Promise((resolve) => setTimeout(resolve, stageDuration));
       setUpdateStatus(nextStatus);
       setUpdateMessage(nextMessage);
-      setProgress(0); // Reset progress for the next stage
+      setProgress(0);
     };
 
     const simulateUpdateProcess = async () => {
-      // Stage 1: Checking for updates (no progress bar needed)
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setUpdateStatus("found");
       setUpdateMessage("Found an update!");
 
-      // Stage 2: Downloading update with progress
       setUpdateStatus("downloading");
       setUpdateMessage("Downloading update...");
       await simulateProgress(2000, "installing", "Installing update...");
 
-      // Stage 3: Installing update with progress
       await simulateProgress(1500, "applied", "Update simulation complete. Restart in a release build to apply.");
     };
 
@@ -65,7 +62,9 @@ const UpdateSheet = ({ visible, onClose, forceUpdate = false, isExpoGo }) => {
           return;
         }
 
-        if (isExpoGo) {
+        // Check if running in development or Expo Go
+        const isDevelopment = isExpoGo || __DEV__;
+        if (isDevelopment) {
           await simulateUpdateProcess();
           await AsyncStorage.setItem(UPDATE_CHECK_KEY, now.toString());
           const newCount = count + 1;
@@ -74,19 +73,17 @@ const UpdateSheet = ({ visible, onClose, forceUpdate = false, isExpoGo }) => {
           return;
         }
 
-        // Real update process
+        // Real update process for production builds
         const updateCheck = await Updates.checkForUpdateAsync();
         if (updateCheck.isAvailable) {
           setUpdateStatus("available");
           setUpdateMessage("A new update is available! Downloading...");
 
-          // Simulate download progress (since expo-updates doesn't provide it)
           await simulateProgress(2000, "downloading", "Installing update...");
 
           const updateFetch = await Updates.fetchUpdateAsync();
           if (updateFetch.isNew) {
-            // Simulate install progress
-            await simulateProgress(1500, "applied", 
+            await simulateProgress(1500, "applied",
               forceUpdate
                 ? "Update required! The app won’t work correctly until updated. Restart now."
                 : "Update downloaded! Restart the app to apply the update."

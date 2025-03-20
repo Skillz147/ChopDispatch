@@ -24,7 +24,6 @@ const CheckOutForm = ({ onNext, setNextEnabled, setNextData }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Load user data and saved addresses from Firestore
   useEffect(() => {
     const loadData = async () => {
       if (!user) {
@@ -58,7 +57,6 @@ const CheckOutForm = ({ onNext, setNextEnabled, setNextData }) => {
     loadData();
   }, [user]);
 
-  // Update next button state and data
   useEffect(() => {
     const isValid = name && address && phone && email;
     setNextEnabled(isValid);
@@ -69,7 +67,6 @@ const CheckOutForm = ({ onNext, setNextEnabled, setNextData }) => {
     }
   }, [name, address, landmark, phone, email, saveAddress, customName, setNextEnabled, setNextData]);
 
-  // Handle address selection
   const handleSelectAddress = (addr) => {
     setSelectedAddress(addr);
     setName(addr.name);
@@ -82,13 +79,11 @@ const CheckOutForm = ({ onNext, setNextEnabled, setNextData }) => {
     setIsEditing(false);
   };
 
-  // Handle edit mode
   const handleEditAddress = (addr) => {
     handleSelectAddress(addr);
     setIsEditing(true);
   };
 
-  // Save or update address when confirmed
   const handleSaveAddress = async () => {
     if (!name || !address || !phone || !email) {
       alert("Please fill all required fields");
@@ -130,7 +125,6 @@ const CheckOutForm = ({ onNext, setNextEnabled, setNextData }) => {
     }
   };
 
-  // Render saved address item
   const renderAddressItem = ({ item }) => (
     <View style={styles.addressItemContainer}>
       <TouchableOpacity
@@ -199,37 +193,40 @@ const CheckOutForm = ({ onNext, setNextEnabled, setNextData }) => {
 
   if (savedAddresses.length > 0 && !isEditing) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Shipping Details</Text>
-        <Text style={styles.subtitle}>Saved Addresses</Text>
-        <FlatList
-          data={savedAddresses}
-          renderItem={renderAddressItem}
-          keyExtractor={(item) => item.id}
-          style={styles.addressList}
-          // Removed horizontal={true} to make the list vertical
-          showsVerticalScrollIndicator={false}
-        />
-        <TouchableOpacity
-          style={styles.addNewButton}
-          onPress={() => {
-            setSavedAddresses([]);
-            setSelectedAddress(null);
-            setIsEditing(false);
-          }}
-          accessible={true}
-          accessibilityLabel="Add New Address"
-        >
-          <Icon name="plus" size={20} color={colors.primary} />
-          <Text style={styles.addNewText}>Add New Address</Text>
-        </TouchableOpacity>
-      </View>
+      <FlatList
+        ListHeaderComponent={
+          <>
+            <Text style={styles.title}>Delivery Details</Text>
+            <Text style={styles.subtitle}>Saved Addresses</Text>
+          </>
+        }
+        data={savedAddresses}
+        renderItem={renderAddressItem}
+        keyExtractor={(item) => item.id}
+        style={styles.addressList}
+        showsVerticalScrollIndicator={false}
+        ListFooterComponent={
+          <TouchableOpacity
+            style={styles.addNewButton}
+            onPress={() => {
+              setSavedAddresses([]);
+              setSelectedAddress(null);
+              setIsEditing(false);
+            }}
+            accessible={true}
+            accessibilityLabel="Add New Address"
+          >
+            <Icon name="plus" size={20} color={colors.primary} />
+            <Text style={styles.addNewText}>Add New Address</Text>
+          </TouchableOpacity>
+        }
+      />
     );
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Shipping Details</Text>
+      <Text style={styles.title}>Delivery Details</Text>
       <View style={styles.inputContainer}>
         <Icon name="account" size={20} color={colors.textDark} style={styles.icon} />
         <TextInput

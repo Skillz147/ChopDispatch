@@ -40,8 +40,7 @@
     "lodash": "^4.17.21",
     "lottie-react-native": "7.1.0",
     "moti": "^0.30.0",
-    "react": "19.0.0",           
-    "react-dom": "19.0.0",       
+    "react": "18.3.1",
     "react-native": "0.76.7",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-dotenv": "^3.4.11",
@@ -58,11 +57,11 @@
     "react-native-swiper-flatlist": "^3.2.5",
     "react-native-toast-message": "^2.2.1",
     "react-native-vector-icons": "^10.2.0",
-    "react-native-webview": "13.12.5"  
+    "react-native-webview": "^13.13.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@types/react": "~19.0.0",   
+    "@types/react": "~18.3.12",
     "typescript": "^5.3.3"
   },
   "private": true,

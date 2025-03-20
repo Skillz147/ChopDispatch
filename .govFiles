@@ -1,0 +1,8 @@
+You only need to achieve PCI SAQ-A compliance (a simpler self-assessment), as opposed to the more rigorous SAQ-D or full audits required for direct card handling.
+
+
+eas build --platform android --profile development
+eas build --platform android --profile production
+
+eas update --channel development --message "Test update for development build"
+
