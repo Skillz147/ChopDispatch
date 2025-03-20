@@ -4,11 +4,11 @@
     "slug": "Mowiz",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/delivero-512.png",
+    "icon": "./assets/logodelivero512.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/delivero-1024.png",
+      "image": "./assets/logodelivero1024.png",
       "resizeMode": "contain",
       "backgroundColor": "#333"
     },
@@ -22,14 +22,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/delivero-1024.png",
+        "foregroundImage": "./assets/logodelivero1024.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.Delivero.app",
       "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/delivero-512.png"
+      "favicon": "./assets/logodelivero512.png"
     },
     "scheme": "delivero",
     "extra": {
