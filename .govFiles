@@ -1,6 +1,11 @@
 You only need to achieve PCI SAQ-A compliance (a simpler self-assessment), as opposed to the more rigorous SAQ-D or full audits required for direct card handling.
 
 
+git add .
+git commit -m "Add NPM_CONFIG_LEGACY_PEER_DEPS to all EAS build profiles"
+git push -u origin main 
+
+
 eas build --platform android --profile development
 eas build --platform android --profile production
 
