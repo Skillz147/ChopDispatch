@@ -1,20 +1,20 @@
 {
   "expo": {
-    "name": "Delivero",
-    "slug": "Mowiz",
+    "name": "chopdispatch",
+    "slug": "ChopDispatch",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logodelivero512.png",
+    "icon": "./assets/chopdispatch-512.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/logodelivero1024.png",
+      "image": "./assets/chopdispatch-1024.png",
       "resizeMode": "contain",
-      "backgroundColor": "#333"
+      "backgroundColor": "#333333"  // Fixed: Expanded to 6 characters
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.Delivero.app",
+      "bundleIdentifier": "com.chopdispatch.app",
       "buildNumber": "1.0.0",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -22,22 +22,22 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logodelivero1024.png",
+        "foregroundImage": "./assets/chopdispatch-1024.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.Delivero.app",
+      "package": "com.chopdispatch.app",
       "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/logodelivero512.png"
+      "favicon": "./assets/chopdispatch-512.png"
     },
-    "scheme": "delivero",
+    "scheme": "chopdispatch",
     "extra": {
       "expoClientId": "@env:EXPO_GOOGLE_CLIENT_ID",
       "iosClientId": "@env:IOS_GOOGLE_CLIENT_ID",
       "androidClientId": "@env:ANDROID_GOOGLE_CLIENT_ID",
       "eas": {
-        "projectId": "ac41c63b-8362-42fa-bd76-e0854a555f15"
+        "projectId": "56488ad3-5974-4d57-a686-bd51328193d9"
       }
     },
     "plugins": [
@@ -57,7 +57,7 @@
     },
     "updates": {
       "enabled": true,
-      "url": "https://u.expo.dev/ac41c63b-8362-42fa-bd76-e0854a555f15"
+      "url": "https://u.expo.dev/56488ad3-5974-4d57-a686-bd51328193d9"
     },
     "assetBundlePatterns": [
       "**/*"
