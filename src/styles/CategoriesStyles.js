@@ -4,36 +4,42 @@ import colors from "./colors";
 export default StyleSheet.create({
   categoriesContainer: {
     paddingVertical: 5,
-    paddingHorizontal: 16, // Edge padding
+    paddingHorizontal: 16,
   },
   categoryCardWrapper: {
-    marginRight: 15, // Space between cards
-    width: 120, // Fixed width for card consistency
+    marginRight: 15,
+    width: 120,
   },
   categoryCard: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 15, // Taller card
+    paddingVertical: 15,
     paddingHorizontal: 10,
-    borderRadius: 15, // Softer corners than pill shape
-    backgroundColor: colors.surface, // White base
-    borderWidth: 1, // Subtle border
-    borderColor: `${colors.textLight}30`, // Light gray border
+    borderRadius: 15,
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: `${colors.textLight}30`,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-    elevation: 4, // Base elevation (animated higher when active)
+    elevation: 4,
   },
-  iconContainer: {
-    padding: 8, // Padding around icon for balance
+  imageContainer: {
+    padding: 8,
     borderRadius: 12,
-    backgroundColor: colors.background, // Slightly darker background for icon
-    marginBottom: 8, // Space between icon and text
+    backgroundColor: colors.background,
+    marginBottom: 8,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  categoryImage: {
+    width: 32, // Adjust size to fit your PNGs
+    height: 32,
   },
   categoryText: {
-    fontSize: 14, // Slightly smaller for card layout
-    fontWeight: "700", // Bolder text for emphasis
+    fontSize: 14,
+    fontWeight: "700",
     color: colors.textDark,
     textAlign: "center",
     fontFamily: Platform.OS === "ios" ? "System" : "Roboto",

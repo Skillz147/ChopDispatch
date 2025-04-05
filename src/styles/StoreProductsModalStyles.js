@@ -242,6 +242,6 @@ export default StyleSheet.create({
   },
   fullScreenImage: {
     width: width * 0.9,
-    height: "80%",
+    height: "100%",
   },
 });

@@ -36,7 +36,7 @@ class ErrorBoundary extends Component {
 
 const onboardingData = [
   {
-    title1: "Welcome to Delivero",
+    title1: "Welcome to Chop Dispatch",
     title: "Enjoy Our Fast & Reliable Rides",
     subtitle: "Shop with ease and confidence",
     text: "Experience quick, safe, and affordable deliveries with our trusted drivers. Whether you're shopping or sending out  pakcages, we've got you covered.",
@@ -90,10 +90,8 @@ const OnboardingScreen = ({ navigation }) => {
 
   const handleDone = async () => {
     try {
-      console.log("OnboardingScreen: handleDone started, user:", user?.uid);
       if (!user?.uid) throw new Error("No user ID available");
       await completeOnboarding(user.uid, navigation);
-      console.log("OnboardingScreen: handleDone completed");
     } catch (error) {
       console.error("OnboardingScreen: Error in handleDone:", error.message);
       navigation.replace("Welcome");
@@ -101,7 +99,6 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const onViewableItemsChanged = ({ viewableItems }) => {
-    console.log("OnboardingScreen: onViewableItemsChanged, viewableItems:", viewableItems);
     if (viewableItems.length > 0) {
       setCurrentPage(viewableItems[0].index);
     }
@@ -111,7 +108,6 @@ const OnboardingScreen = ({ navigation }) => {
     itemVisiblePercentThreshold: 50,
   };
 
-  console.log("OnboardingScreen: Rendering, user:", user?.uid);
 
   return (
     <ErrorBoundary>
@@ -126,7 +122,6 @@ const OnboardingScreen = ({ navigation }) => {
           onViewableItemsChanged={onViewableItemsChanged}
           viewabilityConfig={viewabilityConfig}
           renderItem={({ item, index }) => {
-            console.log("OnboardingScreen: Rendering item at index:", index);
             return (
               <View style={styles.page}>
                 {item.title1 && (

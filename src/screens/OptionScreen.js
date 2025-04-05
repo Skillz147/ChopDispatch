@@ -57,7 +57,6 @@ const OptionScreen = () => {
 
   // Debug: Log context once at render
   useEffect(() => {
-    console.log("SignupContext in OptionScreen:", { setUserChoice });
   }, [setUserChoice]); // Depend on setUserChoice to log changes
 
   // Rotate tips every 5 seconds

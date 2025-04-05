@@ -4,7 +4,7 @@ import {
   View,
   Text,
   TouchableOpacity,
-  FlatList, // Changed from ScrollView
+  FlatList,
   Modal,
   KeyboardAvoidingView,
   Platform,
@@ -117,12 +117,13 @@ const CheckoutSheet = ({ visible, onClose }) => {
   const saveOrderToFirestore = async (paymentData, trackingNum) => {
     try {
       const orderData = {
+        userId: user.uid, // Enforce authenticated user UID
         cartItems: cartItems.map((item) => ({
           id: item.id,
           name: item.name,
           totalPrice: item.totalPrice || 0,
           selectedItems: item.selectedItems || {},
-          store: item.store || {}, // Include store data in order
+          store: item.store || {},
         })),
         formData: {
           name: formData.name,
@@ -165,19 +166,15 @@ const CheckoutSheet = ({ visible, onClose }) => {
   const saveShipmentData = async (trackingNum) => {
     if (deliveryOption !== "rider") return;
 
-    // Use the store's address for pickup (assuming all items in cart are from the same store)
     const store = cartItems[0]?.store || {};
-    const pickupAddress = store.address || "Unknown Store Address";
-    const pickupLandmark = store.landmark || "";
-
     const shipmentData = {
-      userId: user?.uid || "anonymous",
-      pickupAddress: pickupAddress, // Use store address for pickup
-      pickupLandmark: pickupLandmark,
-      pickFromName: store.name || formData.name, // Use store name if available
+      userId: user.uid, // Enforce authenticated user UID
+      pickupAddress: store.address || "Unknown Store Address",
+      pickupLandmark: store.landmark || "",
+      pickFromName: store.name || formData.name,
       pickupTime: pickupTime.toISOString(),
       urgent,
-      deliveryAddress: formData.address, // Delivery address remains the user's address
+      deliveryAddress: formData.address,
       deliveryLandmark: formData.landmark || "",
       receiverName,
       receiverNumber,
@@ -212,6 +209,12 @@ const CheckoutSheet = ({ visible, onClose }) => {
     };
 
     if (response.status === "success") {
+      if (!user || !user.uid) {
+        alert("You must be signed in to complete this order.");
+        setLoading(false); // Reset loading if auth fails
+        return;
+      }
+
       setLoading(true);
       try {
         let riderTrackingNum = null;
@@ -314,7 +317,6 @@ const CheckoutSheet = ({ visible, onClose }) => {
     }
   };
 
-  // Data for FlatList
   const listData = useMemo(() => {
     const data = [];
     if (renderOrderSummary) data.push({ key: "orderSummary", content: renderOrderSummary });
@@ -369,7 +371,7 @@ const CheckoutSheet = ({ visible, onClose }) => {
               <TouchableOpacity style={styles.closeButton} onPress={handleBack}>
                 <Text style={styles.closeText}>Back</Text>
               </TouchableOpacity>
-              <FlatList // Replaced ScrollView with FlatList
+              <FlatList
                 data={listData}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.key}

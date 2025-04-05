@@ -64,7 +64,7 @@ const WelcomeScreen = () => {
       {!user && (
         <View style={styles.siteHeader}>
           <Image
-            source={require("../../assets/delivero2.png")}
+            source={require("../../assets/chopdispatch-large2.png")}
             style={styles.logo}
             resizeMode="contain"
           />

@@ -1,30 +1,25 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  Animated,
-} from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { View, Text, FlatList, TouchableOpacity, Animated, Image } from "react-native";
 import styles from "../../styles/CategoriesStyles";
 import colors from "../../styles/colors";
 
-// Categories updated based on JSON data
+// Map categories to their respective PNG images and softer colors
 const categories = [
-  { id: "1", name: "Restaurants", icon: "silverware-fork-knife" },
-  { id: "2", name: "Groceries", icon: "cart-outline" },
-  { id: "3", name: "Pharmacy", icon: "pill" },
-  { id: "4", name: "Local Market", icon: "storefront-outline" },
-  { id: "5", name: "Mall", icon: "shopping-outline" },
-  { id: "6", name: "Fashion", icon: "hanger" },
+  { id: "1", name: "Restaurants", image: require("../../../assets/category/restaurant.png"), color: "#FFB6C1" }, 
+  { id: "2", name: "Groceries", image: require("../../../assets/category/grocery.png"), color: "#DEE996" }, 
+  { id: "3", name: "Pharmacy", image: require("../../../assets/category/drugstore.png"), color: "#B0E0E6" }, 
+  { id: "4", name: "Local Market", image: require("../../../assets/category/food.png"), color: "#FFFACD" }, 
+  { id: "5", name: "Mall", image: require("../../../assets/category/shopping-mall.png"), color: "#D8BFD8" }, 
+  { id: "6", name: "Fashion", image: require("../../../assets/category/brand.png"), color: "#FFD1DC" }, 
+  { id: "7", name: "Wine", image: require("../../../assets/category/wine.png"), color: "#E6E6FA" }, 
+  { id: "8", name: "Liquor", image: require("../../../assets/category/liquor.png"), color: "#AFEEEE" }, 
 ];
 
 const Categories = ({ onSelectCategory }) => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].name);
   const [animatedValues] = useState(
     categories.reduce((acc, item) => {
-      acc[item.id] = new Animated.Value(0); // Animation value for each category
+      acc[item.id] = new Animated.Value(0);
       return acc;
     }, {})
   );
@@ -38,7 +33,7 @@ const Categories = ({ onSelectCategory }) => {
       categories.map((item) =>
         Animated.spring(animatedValues[item.id], {
           toValue: item.name === category.name ? 1 : 0,
-          friction: 7,
+          friction: 8,
           tension: 50,
           useNativeDriver: true,
         })
@@ -54,7 +49,7 @@ const Categories = ({ onSelectCategory }) => {
     });
     const elevation = animatedValues[item.id].interpolate({
       inputRange: [0, 1],
-      outputRange: [4, 6], // Higher elevation when active
+      outputRange: [4, 8], // Higher elevation when active
     });
 
     return (
@@ -69,16 +64,16 @@ const Categories = ({ onSelectCategory }) => {
             {
               transform: [{ scale }],
               elevation,
-              backgroundColor: isActive ? `${colors.primary}10` : colors.surface, // Light tint when active
-              borderColor: isActive ? colors.primary : `${colors.textLight}30`, // Border change
+              backgroundColor: item.color, // Unique background color for each category
+              borderColor: item.color, // Match border color to background
             },
           ]}
         >
-          <View style={styles.iconContainer}>
-            <Icon
-              name={item.icon}
-              size={28} // Larger icon for card feel
-              color={isActive ? colors.primary : colors.textDark}
+          <View style={styles.imageContainer}>
+            <Image
+              source={item.image}
+              style={styles.categoryImage}
+              resizeMode="contain"
             />
           </View>
           <Text
@@ -86,7 +81,7 @@ const Categories = ({ onSelectCategory }) => {
               styles.categoryText,
               isActive && styles.categoryTextActive,
             ]}
-            numberOfLines={2} // Allow wrapping for longer names
+            numberOfLines={2}
           >
             {item.name}
           </Text>

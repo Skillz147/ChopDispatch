@@ -2,12 +2,17 @@ You only need to achieve PCI SAQ-A compliance (a simpler self-assessment), as op
 
 
 git add .
-git commit -m "Add NPM_CONFIG_LEGACY_PEER_DEPS to all EAS build profiles"
+git commit -m "Fixed a Bug"
 git push -u origin main  --force
+
+npm uninstall expo-dev-client
+
+npm install expo-dev-client
 
 
 eas build --platform android --profile development
 eas build --platform android --profile production
 
-eas update --channel production --message "Test update for production build"
+
+eas update --channel development --message "Updated"
 

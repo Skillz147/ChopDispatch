@@ -108,7 +108,7 @@ const VendorScreen = () => {
 
   const openTermsLink = () => {
     // Replace with your actual Terms and Conditions URL
-    const termsUrl = "https://delivero-orpin.vercel.app/terms";
+    const termsUrl = "https://chopdispatch.com/terms-of-use";
     Linking.openURL(termsUrl).catch(() => {
       Alert.alert("Error", "Unable to open Terms and Conditions link.");
     });
@@ -439,7 +439,7 @@ const VendorScreen = () => {
             </View>
             <ScrollView style={styles.modalBody}>
               <Text style={styles.modalText}>
-                {/* Replace with your actual Terms and Conditions */}
+                
                 Welcome to our Vendor Program. By submitting this application, you agree to the following terms:
 
                 {"\n\n"}1. **Eligibility**: You must be a registered business to apply as a vendor.

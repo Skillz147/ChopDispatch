@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/chopdispatch-1024.png",
       "resizeMode": "contain",
-      "backgroundColor": "#333333"  // Fixed: Expanded to 6 characters
+      "backgroundColor": "#FFFFFF"  
     },
     "ios": {
       "supportsTablet": true,

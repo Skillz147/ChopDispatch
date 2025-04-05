@@ -18,6 +18,18 @@ export default StyleSheet.create({
         shadowRadius: 6,
         elevation: 4,
     },
+
+
+    storeNameContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+      },
+      verifiedIcon: {
+        marginLeft: 5,
+        color: colors.badge,
+      },
+    
+
     storeImage: {
         width: 60,
         height: 60,

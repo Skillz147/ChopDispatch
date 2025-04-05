@@ -1,5 +1,5 @@
 {
-  "name": "delivero",
+  "name": "chopdispatch",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -10,6 +10,7 @@
     "postinstall": "npx expo install --fix"
   },
   "dependencies": {
+    "@firebase/analytics": "^0.10.12",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-community/datetimepicker": "8.2.0",
     "@react-native-google-signin/google-signin": "^13.2.0",
@@ -23,9 +24,9 @@
     "expo-auth-session": "~6.0.3",
     "expo-av": "~15.0.2",
     "expo-constants": "~17.0.8",
-    "expo-dev-client": "~5.0.14",
     "expo-device": "~7.0.2",
     "expo-file-system": "~18.0.11",
+    "expo-firebase-analytics": "^8.0.0",
     "expo-font": "~13.0.4",
     "expo-image-picker": "~16.0.6",
     "expo-location": "~18.0.8",
@@ -40,8 +41,8 @@
     "lodash": "^4.17.21",
     "lottie-react-native": "7.1.0",
     "moti": "^0.30.0",
-    "react": "19.0.0",           
-    "react-dom": "19.0.0",       
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-native": "0.76.7",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-dotenv": "^3.4.11",
@@ -58,11 +59,11 @@
     "react-native-swiper-flatlist": "^3.2.5",
     "react-native-toast-message": "^2.2.1",
     "react-native-vector-icons": "^10.2.0",
-    "react-native-webview": "13.12.5"  
+    "react-native-webview": "13.12.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@types/react": "~19.0.0",   
+    "@types/react": "~18.3.12",
     "typescript": "^5.3.3"
   },
   "private": true,

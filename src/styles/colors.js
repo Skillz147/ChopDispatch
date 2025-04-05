@@ -10,7 +10,7 @@ export default {
     accent: "#FF6F61", // Coral for buttons or alerts
     gradientStart: "#004D40", // Gradient start (deep teal)
     gradientEnd: "#00A36C", // Gradient end (vibrant green)
-    darkBane: "#333",
-    accent: "#FF6F61", // Coral
+    darkBane: "#333", // Dark mode background
     error: "#FF3B30", // Red for destructive actions
+    badge: "#1DA1F2", // Blue for verified checkmark badges
 };
