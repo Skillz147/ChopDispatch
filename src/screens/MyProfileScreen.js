@@ -1,17 +1,18 @@
 import React, { useContext, useState, useEffect } from "react";
 import { View, ScrollView, KeyboardAvoidingView, Platform, Text } from "react-native";
-import { Ionicons } from "@expo/vector-icons"; // Added for icons
-import { AuthContext } from "../context/AuthContext"; // Your exact import
+import { Ionicons } from "@expo/vector-icons";
+import { AuthContext } from "../context/AuthContext";
 import { db } from "../config/firebaseConfig";
 import { collection, query, where, getDocs, doc, getDoc } from "firebase/firestore";
 import LottieView from "lottie-react-native";
 import loadingAnimation from "../../assets/lottie/loading.json";
-import ProfilePicture from "./Profile/ProfilePicture"; // Your exact import
+import ProfilePicture from "./Profile/ProfilePicture";
 import UserInfo from "./Profile/UserInfo";
 import AddressList from "./Profile/AddressList";
 import AddressForm from "./Profile/AddressForm";
-import styles from "../styles/MyProfileScreenStyles"; // Your exact import
-import colors from "styles/colors";
+import ProfileFinance from "./Profile/ProfileFinance"; // Added
+import styles from "../styles/MyProfileScreenStyles";
+import colors from "../styles/colors"; // Ensure colors is imported
 
 const MyProfileScreen = () => {
   const { user } = useContext(AuthContext);
@@ -32,7 +33,6 @@ const MyProfileScreen = () => {
           const userData = userDoc.data();
           setProfilePic(userData.profilePic || "https://ipfs.phonetor.com/ipfs/QmSEuVP5cFmrzRwX55eqPbtt5MAs1TV1dVcef2fwo1gkeJ");
         }
-
         const q = query(collection(db, "addresses"), where("userId", "==", user.uid));
         const querySnapshot = await getDocs(q);
         const addressList = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -76,6 +76,13 @@ const MyProfileScreen = () => {
                 <Text style={styles.sectionTitle}>User Details</Text>
               </View>
               <UserInfo user={user} />
+            </View>
+            <View style={styles.sectionContainer}>
+              <View style={styles.sectionHeader}>
+                <Ionicons name="wallet-outline" size={24} color={colors.primary} style={styles.headerIcon} />
+                <Text style={styles.sectionTitle}>Financial Profile</Text>
+              </View>
+              <ProfileFinance user={user} />
             </View>
             <View style={styles.sectionContainer}>
               <View style={styles.sectionHeader}>

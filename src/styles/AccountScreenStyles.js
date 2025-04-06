@@ -1,3 +1,4 @@
+// src/styles/AccountScreenStyles.js
 import { StyleSheet, Platform, Dimensions } from "react-native";
 import colors from "./colors";
 
@@ -7,6 +8,10 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
+  },
+  scrollContent: {
+    flexGrow: 1, // Allows content to grow within ScrollView
+    paddingBottom: 20, // Adds space at the bottom for scrolling
   },
   headerContainer: {
     padding: 10,
@@ -37,7 +42,6 @@ export default StyleSheet.create({
     marginTop: 3,
   },
   contentContainer: {
-    flex: 1,
     padding: 15,
   },
   navContainer: {
@@ -104,12 +108,11 @@ export default StyleSheet.create({
     borderRadius: 5,
     backgroundColor: colors.accent,
   },
-  // Floating Widget Styles
   floatingWidget: {
     position: "absolute",
     top: 20,
     right: 20,
-    zIndex: 1000, // Ensure it floats above other content
+    zIndex: 1000,
   },
   floatingButton: {
     flexDirection: "row",
@@ -130,4 +133,6 @@ export default StyleSheet.create({
     marginLeft: 8,
     fontWeight: "600",
   },
+
+  
 });

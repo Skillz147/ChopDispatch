@@ -1,4 +1,4 @@
-// src/screens/CheckOutConfirmation.js
+// src/screens/CheckOutPayment/CheckOutConfirmation.js
 import React, { useEffect, useRef } from "react";
 import { View, Text, TouchableOpacity, Animated, Image, Dimensions } from "react-native";
 import { Audio } from "expo-av";

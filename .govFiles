@@ -2,7 +2,7 @@ You only need to achieve PCI SAQ-A compliance (a simpler self-assessment), as op
 
 
 git add .
-git commit -m "Fixed a Bug"
+git commit -m "Security Settings update"
 git push -u origin main  --force
 
 npm uninstall expo-dev-client
